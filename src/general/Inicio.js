@@ -23,6 +23,11 @@ import pasos456 from "../imgs/pasos456.png"
 
 
 const Inicio = () => {
+    const iconoEstilo = {
+        width: '50%',
+        margin: '0 auto'
+      };
+      
     return (
         <><><><div className="container col-6 py-1 px-4 mt-3">
             <h1 className="container" align="center">
@@ -41,9 +46,9 @@ const Inicio = () => {
         </div><div className="container col-3 py-3 px-2 mt-3 mb-2" class="row row-cols-6 md-3 g-2" width="300" height="300">
                 <div class="col 2">
                     <div class="card h-100">
-                        <img src={equipomedico} class="card-img-top" alt="..." />
+                        <img src={equipomedico} style={iconoEstilo} alt="..." />
                         <div class="card-body">
-                            <h5 align="center" class="card-title">MÉDICOS ESPECIALISTAS</h5>
+                            <h5 align="center" class="card-title ">MÉDICOS ESPECIALISTAS</h5>
                             <p class="card-text">Contamos con execlentes profesionales de la salud.</p>
                         </div>
                         <div class="card-footer">
@@ -53,7 +58,7 @@ const Inicio = () => {
                 </div>
                 <div class="col 2">
                     <div class="card h-100">
-                        <img src={cita} class="card-img-top" alt="..." />
+                        <img src={cita} style={iconoEstilo} alt="..." />
                         <div class="card-body">
                             <h5 align="center" class="card-title">AGENDA TUS CITAS</h5>
                             <p class="card-text">Desde la comodidad de tu hogar o trabajo, agenda facilmente tus citas</p>
@@ -65,7 +70,7 @@ const Inicio = () => {
                 </div>
                 <div class="col 2">
                     <div class="card h-100">
-                        <img src={metododepago} class="card-img-top" alt="..." />
+                        <img src={metododepago} style={iconoEstilo} alt="..." />
                         <div class="card-body">
                             <h5 align="center" class="card-title">GESTIONA TUS COBROS</h5>
                             <p class="card-text">Recibe cualquier medio de pago a través de las pasarelas de pago más reconocidas.</p>
@@ -77,7 +82,7 @@ const Inicio = () => {
                 </div>
                 <div class="col 2">
                     <div class="card h-100">
-                        <img src={administracion} class="card-img-top" alt="..." />
+                        <img src={administracion} style={iconoEstilo} alt="..." />
                         <div class="card-body">
                             <h5 align="center" class="card-title">ADMINISTRA TU SITIO</h5>
                             <p class="card-text">Crea tu consultorioOnline, configura los medios de pago y crea los usuarios de acuerdo a tus necesides.</p>
@@ -89,7 +94,7 @@ const Inicio = () => {
                 </div>
                 <div class="col 2">
                     <div class="card h-100">
-                        <img src={paciente} class="card-img-top" alt="..." />
+                        <img src={paciente} style={iconoEstilo} alt="..." />
                         <div class="card-body">
                             <h5 align="center" class="card-title">AUTOGESTION PACIENTES</h5>
                             <p class="card-text">Inscríbete de manera fácil y segura, agenda tu cita con el especialista de tu interés, para la consulta y listo, ¡Ya puedes tener tu diagnóstico 100% Online.</p>
@@ -101,7 +106,7 @@ const Inicio = () => {
                 </div>
                 <div class="col 2">
                     <div class="card h-100">
-                        <img src={hospital} class="card-img-top" alt="..." />
+                        <img src={hospital} style={iconoEstilo} alt="..." />
                         <div class="card-body">
                             <h5 align="center" class="card-title">CENTROS DE SALUD</h5>
                             <p class="card-text">Encuentra la información de todos nuestros consultorios de cientos de médicos y profesionales de la salud asociados a TuDoctorOnline cerca a tu ubicación.</p>
