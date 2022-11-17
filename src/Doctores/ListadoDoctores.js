@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import swal from "sweetalert";
 import APIInvoke from "../utils/APIInvoke";
 
 const ListadoDoctores = () => {
@@ -17,6 +18,47 @@ const ListadoDoctores = () => {
     useEffect(() => {
         cargarDoctores();
     }, [])
+
+    
+    const eliminarDoctor = async (e, doctorId) => {
+        e.preventDefault();
+        const response = await APIInvoke.invokeDELETE(`/doctores/${doctorId}`);
+        console.log(response);
+        if (response.id !== null) {
+            const msg = "El doctor fue borrada correctamente.";
+            swal({
+                title: 'Información',
+                text: msg,
+                icon: 'success',
+                buttons: {
+                    confirm: {
+                        text: 'Ok',
+                        value: true,
+                        visible: true,
+                        className: 'btn btn-primary',
+                        closeModal: true
+                    }
+                }
+            });
+            cargarDoctores();
+        } else {
+            const msg = "El doctor no fue borrada correctamente.";
+            swal({
+                title: 'Error',
+                text: msg,
+                icon: 'error',
+                buttons: {
+                    confirm: {
+                        text: 'Ok',
+                        value: true,
+                        visible: true,
+                        className: 'btn btn-danger',
+                        closeModal: true
+                    }
+                }
+            });
+        }
+    }
 
     return (
         <div className="container">
@@ -58,7 +100,7 @@ const ListadoDoctores = () => {
                                             <td>{item.correo}</td>
                                             <td>
                                                 <Link to={`/tareas-editar/${item._id}`} className="btn btn-sm btn-primary">Editar</Link>&nbsp;&nbsp;
-                                                <button className="btn btn-sm btn-danger">Borrar</button>
+                                                <button onClick={(e) => eliminarDoctor(e, item._id, item.proyecto)} className="btn btn-sm btn-danger">Borrar</button>
                                             </td>
                                         </tr>
                                 )
